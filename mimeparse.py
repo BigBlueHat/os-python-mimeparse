@@ -52,8 +52,7 @@ def parse_media_range(range):
        in with a proper default if necessary.
        """
     (type, subtype, params) = parse_mime_type(range)
-    if not params.has_key('q') or not params['q'] or \
-            not float(params['q']) or float(params['q']) > 1\
+    if not params.has_key('q') or float(params['q']) > 1\
             or float(params['q']) < 0:
         params['q'] = '1'
     return (type, subtype, params)
