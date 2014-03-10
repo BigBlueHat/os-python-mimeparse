@@ -16,7 +16,13 @@
   [["image/jpeg", "text/*;q=0.3, text/html;q=0.7, text/html;level=1, text/html;level=2;q=0.4, */*;q=0.5"], 0.5],
   [["text/html;level=2", "text/*;q=0.3, text/html;q=0.7, text/html;level=1, text/html;level=2;q=0.4, */*;q=0.5"], 0.4],
   [["text/html;level=3", "text/*;q=0.3, text/html;q=0.7, text/html;level=1, text/html;level=2;q=0.4, */*;q=0.5"], 0.7],
-  [["text/plain", "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2"], 0.2]
+  [["text/plain", "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2"], 0.2],
+  [["application/json",
+    "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8,application/json;q=0.0"],
+    0.0],
+  [["text/html",
+    "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8,application/json;q=0.0"],
+    0.9]
 ],
 
 "best_match": [
@@ -84,7 +90,12 @@
     [["application/rdf+xml", "text/html"],
       "text/html, application/rdf+xml"],
      "text/html",
-     "match should use highest order of supported when there is a tie"]
+     "match should use highest order of supported when there is a tie"],
+  [
+    [["text/html", "application/json"],
+      "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8,application/json;q=0.0"],
+     "text/html",
+     "should ignore 0.0 quality entry"]
 ],
 
 "parse_mime_type": [
